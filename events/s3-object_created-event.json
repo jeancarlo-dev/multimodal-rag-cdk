@@ -1,0 +1,38 @@
+{
+  "Records": [
+    {
+      "eventVersion": "2.1",
+      "eventSource": "aws:s3",
+      "awsRegion": "us-east-1",
+      "eventTime": "2025-04-21T23: 24: 55.683Z",
+      "eventName": "ObjectCreated:Put",
+      "userIdentity": {
+        "principalId": "A2ILNVFYU6ZONR"
+      },
+      "requestParameters": {
+        "sourceIPAddress": "181.66.127.183"
+      },
+      "responseElements": {
+        "x-amz-request-id": "2J9CXEW0133FSM53",
+        "x-amz-id-2": "BnKbwUYHkCE7K8FsWGR+tme+H92GQiumNo6Tzp9CqOLTkqMneFoPCSUtQHUBGCdAvggPwFRHfrld6d6/62C599GLEFQGnFw8GYf+Z0Eh3aU="
+      },
+      "s3": {
+        "s3SchemaVersion": "1.0",
+        "configurationId": "arn:aws:cloudformation:us-east-1: 581395982511:stack/RagAppStack/bbdb0a30-1f04-11f0-81eb-0e42d26d685d--4614977625752486325",
+        "bucket": {
+          "name": "rag-docs-s3-bucket",
+          "ownerIdentity": {
+            "principalId": "A2ILNVFYU6ZONR"
+          },
+          "arn": "arn:aws:s3:::rag-docs-s3-bucket"
+        },
+        "object": {
+          "key": "dummy.pdf",
+          "size": 13264,
+          "eTag": "2942bfabb3d05332b66eb128e0842cff",
+          "sequencer": "006806D3C7A3736997"
+        }
+      }
+    }
+  ]
+}

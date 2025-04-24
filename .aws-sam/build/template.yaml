@@ -164,7 +164,10 @@ Resources:
   ExtractDocumentMetadataLambda0BC623C3:
     Type: AWS::Lambda::Function
     Properties:
-      Code: ExtractDocumentMetadataLambda0BC623C3
+      Code:
+        S3Bucket:
+          Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+        S3Key: e176934cae34ac052db28682d082423a600d6893d5092fdfc2fe56063dc6e48e.zip
       Handler: extract_document_metadata.handler
       Role:
         Fn::GetAtt:
@@ -174,12 +177,10 @@ Resources:
     DependsOn:
     - ExtractDocumentMetadataLambdaServiceRole8EE46DB0
     Metadata:
-      SamNormalized: true
-      SamResourceId: ExtractDocumentMetadataLambda
-      aws:asset:is-bundled: false
-      aws:asset:path: ../../cdk.out/asset.d346c8f59cbdea7cbf727f5e986fc1a924c5f53c169b5e257ecb549ec442019b
-      aws:asset:property: Code
       aws:cdk:path: RagAppStack/ExtractDocumentMetadataLambda/Resource
+      aws:asset:path: ../../cdk.out/asset.e176934cae34ac052db28682d082423a600d6893d5092fdfc2fe56063dc6e48e
+      aws:asset:is-bundled: true
+      aws:asset:property: Code
   ExtractDocumentContentLambdaServiceRole79DE766B:
     Type: AWS::IAM::Role
     Properties:
@@ -237,7 +238,7 @@ Resources:
       SamNormalized: true
       SamResourceId: ExtractDocumentContentLambda
       aws:asset:is-bundled: false
-      aws:asset:path: ../../cdk.out/asset.d346c8f59cbdea7cbf727f5e986fc1a924c5f53c169b5e257ecb549ec442019b
+      aws:asset:path: ../../cdk.out/asset.18f036c673c58fb1eafa43e09c9724df5870ad77f11f14fa29cb868c2e7ec03a
       aws:asset:property: Code
       aws:cdk:path: RagAppStack/ExtractDocumentContentLambda/Resource
   ExtractDocumentContentLambdaSqsEventSourceRagAppStackDocumentCreatedQueue4914A4B0BA127E09:
@@ -308,7 +309,7 @@ Resources:
       SamNormalized: true
       SamResourceId: SummarizeDocumentContentLambda
       aws:asset:is-bundled: false
-      aws:asset:path: ../../cdk.out/asset.d346c8f59cbdea7cbf727f5e986fc1a924c5f53c169b5e257ecb549ec442019b
+      aws:asset:path: ../../cdk.out/asset.18f036c673c58fb1eafa43e09c9724df5870ad77f11f14fa29cb868c2e7ec03a
       aws:asset:property: Code
       aws:cdk:path: RagAppStack/SummarizeDocumentContentLambda/Resource
   SummarizeDocumentContentLambdaSqsEventSourceRagAppStackDocumentContentExtractedQueue905ECF9D2C37FAD1:
@@ -379,7 +380,7 @@ Resources:
       SamNormalized: true
       SamResourceId: GenerateSummarizedContentEmbeddingsLambda
       aws:asset:is-bundled: false
-      aws:asset:path: ../../cdk.out/asset.d346c8f59cbdea7cbf727f5e986fc1a924c5f53c169b5e257ecb549ec442019b
+      aws:asset:path: ../../cdk.out/asset.18f036c673c58fb1eafa43e09c9724df5870ad77f11f14fa29cb868c2e7ec03a
       aws:asset:property: Code
       aws:cdk:path: RagAppStack/GenerateSummarizedContentEmbeddingsLambda/Resource
   GenerateSummarizedContentEmbeddingsLambdaSqsEventSourceRagAppStackDocumentContentSummarizedQueue7BDDBA8C99176029:
@@ -555,7 +556,7 @@ Resources:
   CDKMetadata:
     Type: AWS::CDK::Metadata
     Properties:
-      Analytics: v2:deflate64:H4sIAAAAAAAA/+1WUWvbMBD+LdXjUL222cPIW5K1UFghawJ9CKUo0sW5VZZcndwsM/7vQ4oUt7TbGIN1G32wzX13urtPujvrpDh+PyiODsSGDqW6PdS4LNqZF/KWiw3dtGSoaOe2RrlgbxhPzzWfrExE+axZknRYe7Rm0TIfQDaMdmBUbdH4JNbOeiutZkNGd8Q4c2JzAUSihA+g8R7cNlmuUHtwU6tRPgddoV+nhWOrsoWDEq1JggKhPoL34D410EBEO/6a3m+kF8/84Wl3nO6oaKPJomX3SLhEjX47xwps4/esflkTQ0W/PL53iS9adhckYsNQi9fBwU+A3tHORce1qJZKFO1ZY2QqWWkVJOJrYZQGl/ekMR6r/nReyjCyyAnz03swfmYbJ+FC1DWaMrSdcCXkUlkKL9cz/JpdV+LLOEBoyis0ym56fGKNbJwDI/tCqK3z0f7cQ3UmUDcu7GgqSrHUoLLUpzJy5lGt0SPp1Ei3jUWTQ4N3KGlizQrLvvxfWfwdLGLFPS20gE7BVUgU+x9FVbSXVof2F0RNBWq8ZcOW1Q6NxFrokZS22c+wnU1YMJL7BLpA3ogSVOxRjN3bPsK2mVEXe/xPhlJqbqc5RJ6pizZpvRdyfW40Gtjr8iT6sfKVwj9NIWV18TDnF2Pxfb+xj0PuPP1CA6Xsbm6D5kmUp7BSMy88VGA85YT/Y0fPw3Er8y2CBjeCCDwVo/DhNCjGjbwFPxYEi+uOXwLFwfnw0txfnuOimRdlmqnZuuPTrV9b83ZQHJ8U7w4+E+JhugoUl7vvN6uCp+exCwAA
+      Analytics: v2:deflate64:H4sIAAAAAAAA/+1WS2/bMAz+LdVxUNxHdhhyWpK1QIEV6JoAPRhBoUiMw1WWXElulgn+74MUKW7RbsOwYS/0YCv8SH0iZTLkSXH8Zlj4owO2sQMubgcSl4WfOcZvKdvYG2+VLfxcN8hL8orQ9CzodKUiSmft0nKDjUOtSk9cAMko2oESjUblktgY7TTXkoyIvbOEEsM2F2Atq+AdSLwHs02WK5QOzKWWyJ+DrtGt08aJFtnCQIVaJUEAE+/BOTAfWmghoh19ce8n3Ivf/OHX7qi9s4WPJqUn92hxiRLddo416Nbto/phTTwq8tL43jleenIXJEtGIRcXgeA7QE+0o+gosrrwV1oGj5m1bQ1isiUjTxqDimPD5Jhz3e6vfWcTNoy5yzfUUVIzxSoQkRbjgf4Rth2bZBvd+p1HCTHXl/mInAalT1rnGF+fK4kK9rp8ed9WvoTwT4eQvLp46PMfi+LrvLFkg+80VX0IKdPNddA8OeUpLMTMMQc1KGezw/8x0fNwvMr8x2eHN8xacLYYh4XaYTFp+S24CbNQLqhk9VKwwk9X6qxVMW9o/lF6wrWAlF5rpoQEkxtHqxzWfQv7xYYLenoPys10azhcsKZBVYUxg5kKcr4vmePrGX7OdDX7NAkQquoaldCbHp9qxVtjQPG+8TXauGh/7qA+YyhbE+o7NWG2lCCy1LuS6yT3VvtIOlXcbBvXd9QanEFup1qtsOrb/UsUf0cUsVKeJlqsHzA1WhvmnY5egY36h7NwPxPHwpo5VqWt2bqjRwMmmzUrjg7epkH7MKy7mhs0W7fWKplcRmFfeZm8ozvF4bA4PileH3y0iINUKcXVbv0CkdEiv80LAAA=
     Metadata:
       aws:cdk:path: RagAppStack/CDKMetadata/Default
     Condition: CDKMetadataAvailable

@@ -55,4 +55,16 @@ command.
  * `cdk diff`        compare deployed stack with current state
  * `cdk docs`        open CDK documentation
 
-Enjoy!
+
+## Comandos propios
+Generar archivo de evento para pruebas locales
+   * `sam local generate-event <service> <event> <event-option> > <filename.json>`
+   * Ejemplo:
+   `sam local generate-event s3 put --bucket rag-docs-s3-bucket > events/s3-object_created.json`
+
+Documentación AWS CDK Python
+[Link](https://docs.aws.amazon.com/cdk/api/v2/python/aws_cdk.html)
+
+
+
+
